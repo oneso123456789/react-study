@@ -1,32 +1,29 @@
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
-import Home from "./view/home";
-import About from "./view/about";
-import Axios from "./view/axios";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./view/Home";
+import About from "./view/About";
+import Axios from "./view/Axios";
 import Profiles from "./view/Profiles";
+import Article from "./view/Article";
+import Articles from "./view/Articles";
+import Layout from "./view/Layout";
 
 function App() {
     return (
-        <div>
-            <BrowserRouter>
-                <nav>
-                    <Link to='/'>Home</Link>
-                    <br/>
-                    <Link to='/about'>About</Link>
-                    <br/>
-                    <Link to='/profiles'>Profile</Link>
-                    <br/>
-                    <Link to='/axios'>Axios</Link>
-                </nav>
-                <header>----------------------------------</header>
-                <Routes>
+
+        <BrowserRouter>
+            <Routes>
+                <Route element={<Layout/>}>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/about" element={<About/>}/>
                     <Route path="/axios" element={<Axios/>}/>
                     <Route path="/profiles/*" element={<Profiles/>}/>
-                </Routes>
-                <footer>----------------------------------</footer>
-            </BrowserRouter>
-        </div>
+                    <Route path={"/articles"} element={<Articles/>}>
+                        <Route path={":id"} element={<Article/>}/>
+                    </Route>
+                </Route>
+            </Routes>
+        </BrowserRouter>
+
     );
 }
 
