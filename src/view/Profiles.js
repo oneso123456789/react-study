@@ -13,6 +13,9 @@ const Profiles = () => {
                 <li>
                     <Link to={"/profiles/chunsik"}>춘식</Link>
                 </li>
+                <li>
+                    <Link to={"/profiles/void"}>존재하지 않는 프로필 </Link>
+                </li>
             </ul>
 
             <Routes>
