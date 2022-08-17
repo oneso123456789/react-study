@@ -1,19 +1,22 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-function App(){
-    const [hello, setHello] = useState('')
 
+function App() {
+    const [data, setdata] = useState('')
     useEffect(() => {
-    axios.get('/api/hello')
-        .then(response => setHello(response.data))
-        .catch(error => console.log(error))
+        axios.get('/api/list')
+            .then(response => setdata(response.data))
+            .catch(error => console.log(error))
     }, []);
 
-    return(
+
+
+    return (
         <div>
-            백엔드에서 가져온 데이터입니다 : {hello}
+            {data.totalPage}
         </div>
     );
 }
+
 export default App;

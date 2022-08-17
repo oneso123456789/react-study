@@ -11,6 +11,7 @@ const data = {
     },
 };
 
+
 const Profile = () => {
     const params = useParams();
     const profile = data[params.username];
