@@ -18,7 +18,7 @@ function Home() {
                 <br/>
                 <Link to='/profiles'>Profile</Link>
                 <br/>
-                <Link to='/axios'>Axios</Link>
+                <Link to='/list'>List</Link>
                 <br/>
                 <Link to='/articles'>articles</Link>
             </nav>

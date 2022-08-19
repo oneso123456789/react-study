@@ -7,6 +7,17 @@
   pointer-events: none;
 }
 
+li {
+  list-style: none;
+}
+/*#aa {
+  list-style: none;
+}*/
+
+.ul {
+  list-style: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
