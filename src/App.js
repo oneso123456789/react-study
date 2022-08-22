@@ -6,6 +6,7 @@ import Article from "./view/Article";
 import Articles from "./view/Articles";
 import Layout from "./view/Layout";
 import List from "./view/List";
+import Register from "./view/Register";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route path={"/articles"} element={<Articles/>}>
                         <Route path={":id"} element={<Article/>}/>
                     </Route>
+                    <Route path={"/register"} element={<Register/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import '../App.css';
-import {Link} from "react-router-dom";
+import {Link, Route, Router} from "react-router-dom";
 
 function App() {
     const [list, setList] = useState([]);
@@ -19,7 +19,7 @@ function App() {
 
         <div>
             <ul>
-                커뮤니티
+                커뮤니티<Link to={"/register"}> {" "}  {" "}  {" "} 글쓰기</Link>
             </ul>
             <ul>
                 {list.map(item => (
