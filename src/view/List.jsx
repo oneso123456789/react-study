@@ -19,7 +19,7 @@ function App() {
 
         <div>
             <ul>
-                커뮤니티<Link to={"/register"}> {" "}  {" "}  {" "} 글쓰기</Link>
+                커뮤니티<Link to={"/register"}><button>글쓰기</button></Link>
             </ul>
             <ul>
                 {list.map(item => (
