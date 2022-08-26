@@ -54,8 +54,11 @@ const Register = () => {
 
 
     const onChangeFiles = e => {
+        /*console.log(setFiles([...files, ...e.target.files]));
         setFiles([...files, ...e.target.files]);
-        console.log(files);
+        console.log(files);*/
+
+        setFiles(f => ([...f, e.target.files[0]]));
     }
 
 
