@@ -21,7 +21,10 @@ const Register = () => {
         registerFormData.append("title", formValue.title)
         registerFormData.append("content", formValue.content)
         registerFormData.append("author", formValue.author)
-        registerFormData.append("files", files[0])
+        for (let i = 0; i < files.length; i++) {
+            registerFormData.append("files", files[i])
+            console.log("안녕" + files[i])
+        }
 
 
         try {
@@ -33,10 +36,9 @@ const Register = () => {
             });
             navigate("/list");
             console.log(response);
-            files.map({
-
-            })
-            console.log(files[0]);
+            for (let i of files){
+                console.log(i);
+            }
             console.log("폼" + formValue)
         } catch (error) {
             console.log(error);
@@ -54,11 +56,11 @@ const Register = () => {
 
 
     const onChangeFiles = e => {
-        /*console.log(setFiles([...files, ...e.target.files]));
         setFiles([...files, ...e.target.files]);
-        console.log(files);*/
+        console.log(files);
+        console.log(files.length + "길이");
 
-        setFiles(f => ([...f, e.target.files[0]]));
+        /*setFiles(f => ([...f, e.target.files[0]]));*/
     }
 
 
@@ -69,7 +71,7 @@ const Register = () => {
                 <p>제목<input name={"title"} value={formValue.title} onChange={handleChange}/></p>
                 <p>내용<input name={"content"} value={formValue.content} onChange={handleChange}/></p>
                 <p>작성자<input name={"author"} value={formValue.author} onChange={handleChange}/></p>
-                <input type={"file"} name={"files"} onChange={onChangeFiles}/>
+                <input type={"file"} name={"files"} onChange={onChangeFiles} multiple/>
                 <button type={"button"} onClick={handleSubmit}>등록</button>
             </form>
 
